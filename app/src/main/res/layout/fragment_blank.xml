@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              tools:context="com.example.pogoda.BlankFragment" android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:textSize="50dp"
+            android:layout_height="wrap_content" android:id="@+id/data" android:layout_weight="1"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:layout_height="wrap_content" android:id="@+id/textView" android:layout_weight="1"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:layout_height="wrap_content" android:id="@+id/temperatura" android:layout_weight="1"/>
+
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:layout_height="wrap_content" android:id="@+id/wilgotnoscText" android:layout_weight="1"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:layout_height="wrap_content" android:id="@+id/wilgotnosc" android:layout_weight="1"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:layout_height="wrap_content" android:id="@+id/predkoscText" android:layout_weight="1"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:layout_height="wrap_content" android:id="@+id/predkosc" android:layout_weight="1"/>
+
+</LinearLayout>
