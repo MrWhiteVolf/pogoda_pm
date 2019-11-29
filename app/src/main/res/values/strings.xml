@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">pogoda</string>
+    <string name="app_name">Your weather</string>
+    <string name="status_connection_lost">"Internet connection lost, you can't read weather data without it. Please
+        connect to the network. "
+    </string>
+    <string name="status_connection_wifi">"You connected to wifi. Have fun using the application. "</string>
+    <string name="status_connection_mobile_data">"Mobile data enabled. Have fun using the application. "</string>
 </resources>
