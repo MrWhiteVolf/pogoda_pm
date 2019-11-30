@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">pogoda</string>
+    <string name="app_name">Pogoda</string>
+    <string name="waiting_for_data">Oczekiwanie na sieć.</string>
+    <string name="temperature">Temperatura [°C]:</string>
+    <string name="humidity">Wilgotność [%]:</string>
+    <string name="windSpeed">Prędkość wiatru [m/s]:</string>
+    <string name="today">dzisiaj</string>
+    <string name="tomorrow">jutro</string>
+    <string name="error_connect">Problem z połączęniem. Sprawdź nazwę miejscowości.</string>
+    <string name="error_processing">Problem z przetwarzaniem.</string>
+    <string name="error_url">Problem z api. </string>
 </resources>
