@@ -7,4 +7,15 @@
     </string>
     <string name="status_connection_wifi">Połaczyłeś się z wifi. Miłego korzystania z aplikacji.</string>
     <string name="status_connection_mobile_data">Połaczyłeś się z internetem. Miłego korzystania z aplikacji.</string>
+    <string name="waiting_for_data">Oczekiwanie na sieć.</string>
+    <string name="temperature">Temperatura [°C]:</string>
+    <string name="humidity">Wilgotność [%]:</string>
+    <string name="windSpeed">Prędkość wiatru [m/s]:</string>
+    <string name="today">dzisiaj</string>
+    <string name="tomorrow">jutro</string>
+    <string name="error_connect">Problem z połączęniem. Sprawdź nazwę miejscowości.</string>
+    <string name="error_processing">Problem z przetwarzaniem.</string>
+    <string name="error_url">Problem z api.</string>
+    <string name="select_city">Wybierz miasto</string>
+    <string name="serach_city">Wybierz miasto lub wpisz nazwe :)</string>
 </resources>

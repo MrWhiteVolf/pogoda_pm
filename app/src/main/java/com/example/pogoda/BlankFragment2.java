@@ -29,14 +29,12 @@ public class BlankFragment2 extends Fragment {
             String minTemp = intent.getStringExtra("minTemp");
             String maxTemp = intent.getStringExtra("maxTemp");
 
-            System.out.println("fajno -- receiver we fragment działa jak chce");
-
-
             TextView temp = (TextView) rootView.findViewById(R.id.temperatura);
             TextView windSpeed = (TextView) rootView.findViewById(R.id.predkosc);
             TextView humidity = (TextView) rootView.findViewById(R.id.wilgotnosc);
 
-            temp.setText(avgTemp + " (min:"+minTemp+" max:"+maxTemp+")");     //albo zapytanie do api
+            String temperature=avgTemp + " (min:"+minTemp+" max:"+maxTemp+")";
+            temp.setText(temperature);
             windSpeed.setText(avgWindSpeed);
             humidity.setText(avgHumidity);
         }
@@ -60,7 +58,8 @@ public class BlankFragment2 extends Fragment {
 
         String dayText = getResources().getString(R.string.tomorrow);
         TextView title = (TextView) rootView.findViewById(R.id.title1);
-        title.setText(cityName+","+dayText);
+        String titleText = cityName+","+dayText;
+        title.setText(titleText);
 
         return rootView;
     }

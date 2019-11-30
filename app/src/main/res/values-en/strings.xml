@@ -7,4 +7,15 @@
     </string>
     <string name="status_connection_wifi">"You connected to wifi. Have fun using the application. "</string>
     <string name="status_connection_mobile_data">"Mobile data enabled. Have fun using the application. "</string>
+    <string name="waiting_for_data">Waiting for the network.</string>
+    <string name="temperature">Temperature [°C]:</string>
+    <string name="humidity">Humidity [%]:</string>
+    <string name="windSpeed">Wind speed [m/s]:</string>
+    <string name="today">today</string>
+    <string name="tomorrow">tomorrow</string>
+    <string name="error_connect">Connection problem. Check the city name.</string>
+    <string name="error_processing">Processing problem.</string>
+    <string name="error_url">Api problem.</string>
+    <string name="select_city">Select or type city</string>
+    <string name="serach_city">Select or type city :)</string>
 </resources>
