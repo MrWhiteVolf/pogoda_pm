@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Twoja pogoda</string>
+
+    <string name="status_connection_lost">"Utracono połączenie z internetem, bez niego nie odczytasz danych o pogodzie.
+        Proszę połączyć się z siecią. "
+    </string>
+    <string name="status_connection_wifi">Połaczyłeś się z wifi. Miłego korzystania z aplikacji.</string>
+    <string name="status_connection_mobile_data">Połaczyłeś się z internetem. Miłego korzystania z aplikacji.</string>
+</resources>
