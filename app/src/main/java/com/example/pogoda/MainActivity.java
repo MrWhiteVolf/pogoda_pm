@@ -18,7 +18,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private BroadcastReceiver MyReceiver = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -35,11 +34,17 @@ public class MainActivity extends AppCompatActivity {
 
         final Fragment fragment1 = new BlankFragment();
         final Fragment fragment2 = new BlankFragment2();
-
+        final Fragment lastSelected;
+        if(MyIntentService.dday == 0){
+            lastSelected = fragment1;
+            System.out.println("fajno");
+        }else{
+            lastSelected = fragment2;
+            System.out.println("nie fajno");
+        }
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.container, fragment1);
+        ft.replace(R.id.container,lastSelected);
         ft.commit();
-
         try {
             cityName = getIntent().getExtras().getString("SELECTED_CITY");
             SharedPreferences.Editor editor = pref.edit();
@@ -58,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
         Button selectCity2 = findViewById(R.id.select_city2);
         selectCity2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
-                MainActivity.this.startActivity(myIntent);
+                    Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                    MainActivity.this.startActivity(myIntent);
             }
         });
 
@@ -70,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(myIntent);
             }
         });
-        Button button1 = findViewById(R.id.fragment1button);
+        final Button button1 = findViewById(R.id.fragment1button);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -79,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button button2 = findViewById(R.id.fragment2button);
+        final Button button2 = findViewById(R.id.fragment2button);
         button2.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {

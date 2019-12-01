@@ -31,7 +31,7 @@ import java.util.Locale;
 public class MyIntentService extends IntentService {
     public static final String DAY = "day";
     public static final String CITY = "cityName";
-
+    public static int dday;
     public void showToast(String message) {
         final String msg = message;
         new Handler(Looper.getMainLooper()).post(new Runnable() {
@@ -63,8 +63,8 @@ public class MyIntentService extends IntentService {
         String foreCastType;
         String day = intent.getStringExtra(DAY);
         String cityName = intent.getStringExtra(CITY);
-        if (day.equals("0")) foreCastType = "weather";
-        else foreCastType = "forecast";
+        if (day.equals("0")) {foreCastType = "weather";dday =0;}
+        else{ foreCastType = "forecast";dday =1;}
         try {
 
             url = new URL("https://api.openweathermap.org/data/2.5/" + foreCastType + "?q=" + cityName + "&units=metric" + urlApiKey);
