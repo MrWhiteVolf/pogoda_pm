@@ -6,6 +6,7 @@ import android.content.IntentFilter;
 import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
+import android.database.sqlite.*;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.pogoda.receivers.ConnectionReceiver;
 
 import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
     private BroadcastReceiver MyReceiver = null;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("WeatherAppPref", 0); // 0 - for private mode
