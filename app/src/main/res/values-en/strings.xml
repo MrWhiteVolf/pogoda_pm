@@ -18,4 +18,5 @@
     <string name="error_url">Api problem.</string>
     <string name="select_city">Select or type city</string>
     <string name="serach_city">Select or type city :)</string>
+    <string name="waiting_text">Waiting…</string>
 </resources>

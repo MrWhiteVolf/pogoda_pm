@@ -18,4 +18,5 @@
     <string name="error_url">Problem z api.</string>
     <string name="select_city">Wybierz miasto</string>
     <string name="serach_city">Wybierz miasto lub wpisz nazwe :)</string>
+    <string name="waiting_text">Oczekiwanie…</string>
 </resources>
