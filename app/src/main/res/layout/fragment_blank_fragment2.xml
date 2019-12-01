@@ -8,46 +8,46 @@
 
 
     <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
+            android:text="Wait..."
+            android:layout_width="170dp"
             android:textSize="50dp"
-            android:layout_height="wrap_content" android:id="@+id/data" android:layout_weight="1"/>
+            android:layout_height="wrap_content" android:id="@+id/title2" android:layout_weight="1"/>
     <TextView
-            android:text="TextView"
+            android:text="@string/temperature"
+            android:layout_width="168dp"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:layout_height="wrap_content" android:id="@+id/temperatura2" android:layout_weight="1"/>
+    <TextView
+            android:text="@string/waiting_for_data"
             android:layout_width="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="25dp"
-            android:layout_height="wrap_content" android:id="@+id/textView" android:layout_weight="1"/>
-    <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textSize="25dp"
-            android:layout_height="wrap_content" android:id="@+id/temperatura" android:layout_weight="1"/>
+            android:layout_height="wrap_content" android:id="@+id/temperaturaText2" android:layout_weight="1"/>
 
     <TextView
-            android:text="TextView"
+            android:text="@string/humidity"
             android:layout_width="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="25dp"
-            android:layout_height="wrap_content" android:id="@+id/wilgotnoscText" android:layout_weight="1"/>
+            android:layout_height="wrap_content" android:id="@+id/wilgotnoscText2" android:layout_weight="1"/>
     <TextView
-            android:text="TextView"
+            android:text="@string/waiting_for_data"
             android:layout_width="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="25dp"
-            android:layout_height="wrap_content" android:id="@+id/wilgotnosc" android:layout_weight="1"/>
+            android:layout_height="wrap_content" android:id="@+id/wilgotnosc2" android:layout_weight="1"/>
     <TextView
-            android:text="TextView"
+            android:text="@string/windSpeed"
             android:layout_width="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="25dp"
-            android:layout_height="wrap_content" android:id="@+id/predkoscText" android:layout_weight="1"/>
+            android:layout_height="wrap_content" android:id="@+id/predkoscText2" android:layout_weight="1"/>
     <TextView
-            android:text="TextView"
+            android:text="@string/waiting_for_data"
             android:layout_width="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="25dp"
-            android:layout_height="wrap_content" android:id="@+id/predkosc" android:layout_weight="1"/>
+            android:layout_height="wrap_content" android:id="@+id/predkosc2" android:layout_weight="1"/>
 
 </LinearLayout>

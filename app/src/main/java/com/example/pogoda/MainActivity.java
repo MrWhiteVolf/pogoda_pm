@@ -1,10 +1,10 @@
 package com.example.pogoda;
 
-import android.content.BroadcastReceiver;
-import android.content.IntentFilter;
+import android.content.*;
 import android.net.ConnectivityManager;
+import android.content.IntentFilter;
 import android.view.View;
-import android.widget.Button;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -12,19 +12,55 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import com.example.pogoda.receivers.ConnectionReceiver;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     private BroadcastReceiver MyReceiver = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("WeatherAppPref", 0); // 0 - for private mode
+        String cityName;
+        cityName = pref.getString("LAST_SELECTED_CITY","Warszawa");
 
         MyReceiver = new ConnectionReceiver();
 
         final Fragment fragment1 = new BlankFragment();
         final Fragment fragment2 = new BlankFragment2();
 
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.container, fragment1);
+        ft.commit();
+
+        try {
+            cityName = getIntent().getExtras().getString("SELECTED_CITY");
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putString("LAST_SELECTED_CITY", cityName); // Storing boolean - true/false
+            editor.commit(); // commit changes
+        }
+        catch (NullPointerException e){
+            e.printStackTrace();
+        }
+        finally {
+            Bundle bundle = new Bundle();
+            bundle.putString("CITY",cityName);
+            fragment1.setArguments(bundle);
+            fragment2.setArguments(bundle);
+        }
+
+
+        Button selectCity = findViewById(R.id.select_city);
+        selectCity.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent myIntent = new Intent(MainActivity.this, CitiesListActivity.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
         Button button1 = findViewById(R.id.fragment1button);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
@@ -36,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button button2 = findViewById(R.id.fragment2button);
         button2.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View arg0) {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, fragment2);
