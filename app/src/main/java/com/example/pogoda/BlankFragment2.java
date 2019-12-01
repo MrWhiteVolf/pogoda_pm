@@ -66,10 +66,14 @@ public class BlankFragment2 extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        MyBroadcastReceiver receiver;
+        //MyBroadcastReceiver receiver;
         IntentFilter filter = new IntentFilter(MyBroadcastReceiver.ACTION_RESP);
         receiver = new MyBroadcastReceiver();
         getActivity().registerReceiver(receiver, filter);
     }
-
+    @Override
+    public void onPause() {
+        super.onPause();
+        getActivity().unregisterReceiver(receiver);;
+    }
 }
