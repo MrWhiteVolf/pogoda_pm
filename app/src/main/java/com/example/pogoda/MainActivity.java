@@ -52,7 +52,13 @@ public class MainActivity extends AppCompatActivity {
             fragment1.setArguments(bundle);
             fragment2.setArguments(bundle);
         }
-
+        Button selectCity2 = findViewById(R.id.select_city2);
+        selectCity2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
 
         Button selectCity = findViewById(R.id.select_city);
         selectCity.setOnClickListener(new View.OnClickListener() {
