@@ -54,10 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         if(MyIntentService.dday == 0){
             lastSelected = fragment1;
-            System.out.println("fajno");
         }else{
             lastSelected = fragment2;
-            System.out.println("nie fajno");
         }
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.container,lastSelected);
