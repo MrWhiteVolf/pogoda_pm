@@ -18,53 +18,53 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private BroadcastReceiver MyReceiver = null;
+    SharedPreferences pref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("WeatherAppPref", 0); // 0 - for private mode
-        String cityName;
-        cityName = pref.getString("LAST_SELECTED_CITY","Warszawa");
-
         MyReceiver = new ConnectionReceiver();
 
         final Fragment fragment1 = new BlankFragment();
         final Fragment fragment2 = new BlankFragment2();
         final Fragment lastSelected;
-        if(MyIntentService.dday == 0){
-            lastSelected = fragment1;
-            System.out.println("fajno");
-        }else{
-            lastSelected = fragment2;
-            System.out.println("nie fajno");
-        }
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.container,lastSelected);
-        ft.commit();
+
+        pref = getSharedPreferences("WeatherAppPref", Context.MODE_WORLD_READABLE); // 0 - for private mode
+        String cityName;
         try {
             cityName = getIntent().getExtras().getString("SELECTED_CITY");
+            if (cityName == null) throw new NullPointerException();
             SharedPreferences.Editor editor = pref.edit();
-            editor.putString("LAST_SELECTED_CITY", cityName); // Storing boolean - true/false
-            editor.commit(); // commit changes
+            editor.putString("LAST_SELECTED_CITY", cityName);
+            editor.commit();
         }
         catch (NullPointerException e){
             e.printStackTrace();
         }
+
         finally {
+            cityName = pref.getString("LAST_SELECTED_CITY","Warszawa");
             Bundle bundle = new Bundle();
             bundle.putString("CITY",cityName);
             fragment1.setArguments(bundle);
             fragment2.setArguments(bundle);
         }
+
+        if(MyIntentService.dday == 0){
+            lastSelected = fragment1;
+        }else{
+            lastSelected = fragment2;
+        }
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.container,lastSelected);
+        ft.commit();
         Button selectCity2 = findViewById(R.id.select_city2);
         selectCity2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                    Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
-                    MainActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                MainActivity.this.startActivity(myIntent);
             }
         });
 
